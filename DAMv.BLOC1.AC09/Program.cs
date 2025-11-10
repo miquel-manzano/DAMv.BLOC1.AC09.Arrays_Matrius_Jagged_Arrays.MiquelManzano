@@ -2,7 +2,8 @@
 {
     public static void Main()
     {
-        //Exercise One
+        const string ArrayLengthMsg = "Your array with length {0}:";
+
         int[] twientyNumbers = new int[20];
         Random rnd = new Random();
 
@@ -15,7 +16,7 @@
         }
 
         // Print the array
-        Console.WriteLine($"Your array with length {twientyNumbers.GetLength(0)}:");
+        Console.WriteLine(ArrayLengthMsg, twientyNumbers.GetLength(0));
         foreach (int number in twientyNumbers)
         {
             Console.Write($"{number} ");
