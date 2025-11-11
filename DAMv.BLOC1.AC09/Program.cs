@@ -4,6 +4,9 @@ public class Program
 {
     public static void Main()
     {
+        const string StoreNameMsg = "=== The magic ITB store ===";
+        const string StoreHeaderMsg = "Name - Max level - Power - Weight (kg) - Cost (€) - isRareItem - RareType\n";
+
         string[] AvailableObjects = { "Espasa", "Escut", "Poció", "Arc" };
         string[] rareTypes = { "Comú", "Rar", "Legendari", "Ordinari" };
         string name;
@@ -16,8 +19,8 @@ public class Program
 
         Random rnd = new Random();
 
-        Console.WriteLine("=== The magic ITB store ===");
-        Console.WriteLine("Name - Max level - Power - Weight (kg) - Cost (€) - isRareItem - RareType\n");
+        Console.WriteLine(StoreNameMsg);
+        Console.WriteLine(StoreHeaderMsg);
         for (int i = 0; i < 4; i++)
         {
             name = AvailableObjects[rnd.Next(AvailableObjects.Length)];
