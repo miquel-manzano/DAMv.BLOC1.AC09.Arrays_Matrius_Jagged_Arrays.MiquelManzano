@@ -2,6 +2,9 @@
 {
     public static void Main()
     {
+        const string OrderNumMsg = "Ten numbers on order";
+        const string InverseOrderNumMsg = "Ten numbers on inverse order";
+
         int[] tenNumbers = new int[10];
         Random rnd = new Random();
 
@@ -13,14 +16,14 @@
             index++;
         }
 
-        Console.WriteLine("Ten numbers on order");
+        Console.WriteLine(OrderNumMsg);
         // Print the numbers
         for (int i = 0; i < tenNumbers.GetLength(0); i++)
         {
             Console.Write($"{tenNumbers[i]} ");
         }
 
-        Console.WriteLine("Ten numbers on inverse order");
+        Console.WriteLine(InverseOrderNumMsg);
         // Print the numbers in reverse order
         for (int i = tenNumbers.GetLength(0)-1; i >= 0; i--)
         {
