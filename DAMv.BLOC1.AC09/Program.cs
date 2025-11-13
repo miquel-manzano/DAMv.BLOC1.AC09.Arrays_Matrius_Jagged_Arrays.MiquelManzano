@@ -27,16 +27,17 @@
         {
             Console.Write($"{troop} ");
         }
+        Console.WriteLine("\n");
 
-        for(int i = 0; i < Map.GetLength(0); i++)
+        for (int i = 0; i < Map.GetLength(0); i++)
         {
             for(int j = 0; j < Map.GetLength(1); j++)
             {
-                if(i % 2 == 2 && j % 2 == 0)
+                if(i % 2 == 0 && j % 2 == 0)
                 {
                     Map[i, j] = "🗼";
                 }
-                else if(i % 2 != 2 && j % 2 != 0)
+                else if(i % 2 != 0 && j % 2 != 0)
                 {
                     Map[i, j] = "🕳️";
                 }
@@ -51,8 +52,34 @@
         {
             for (int j = 0; j < Map.GetLength(1); j++)
             {
-                Console.WriteLine($"{Map[i, j]} ");
+                Console.Write($"{Map[i, j]} ");
             }
+            Console.WriteLine();
+        }
+        Console.WriteLine("\n");
+
+        for (int i = 0; i < Regions.Length; i++)
+        {
+            for (int j = 0; j < Regions[i].Length; j++)
+            {
+                if ((i + j) % 2 == 0)
+                {
+                    Regions[i][j] = "➖";
+                }
+                else
+                {
+                    Regions[i][j] = "💎";
+                }
+            }
+        }
+
+        for (int i = 0; i < Regions.Length; i++)
+        {
+            for (int j = 0; j < Regions[i].Length; j++)
+            {
+                Console.Write($"{Regions[i][j]} ");
+            }
+            Console.WriteLine();
         }
     }
 }
