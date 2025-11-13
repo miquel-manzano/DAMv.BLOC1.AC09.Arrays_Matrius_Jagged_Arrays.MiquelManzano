@@ -34,16 +34,24 @@
             {
                 if(i % 2 == 2 && j % 2 == 0)
                 {
-                    
+                    Map[i, j] = "🗼";
                 }
                 else if(i % 2 != 2 && j % 2 != 0)
                 {
-                    
+                    Map[i, j] = "🕳️";
                 }
                 else
                 {
-
+                    Map[i, j] = "🌿";
                 }
+            }
+        }
+
+        for (int i = 0; i < Map.GetLength(0); i++)
+        {
+            for (int j = 0; j < Map.GetLength(1); j++)
+            {
+                Console.WriteLine($"{Map[i, j]} ");
             }
         }
     }
