@@ -2,8 +2,10 @@
 {
     public static void Main()
     {
-        string[] Troops = new string[10];
-        string[,] Map = new string[5, 5];
+        const int tamTroops = 10;
+
+        string[] troops = new string[tamTroops];
+        string[,] map = new string[5, 5];
         string[][] Regions = new string[3][];
         Regions[0] = new string[4];
         Regions[1] = new string[2];
@@ -11,48 +13,41 @@
 
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        for (int i = 0; i < Troops.GetLength(0); i++)
+        for (int i = 0; i < troops.GetLength(0); i++)
         {
-            if (i % 2 == 0)
-            {
-                Troops[i] = "🛡️";
-            }
-            else
-            {
-                Troops[i] = "⚔️";
-            }
+            troops [i] = i % 2 == 0 ? "🛡️" : "⚔️"; //ternaria
         }
 
-        foreach(var troop in Troops)
+        foreach(var troop in troops)
         {
             Console.Write($"{troop} ");
         }
         Console.WriteLine("\n");
 
-        for (int i = 0; i < Map.GetLength(0); i++)
+        for (int i = 0; i < map.GetLength(0); i++)
         {
-            for(int j = 0; j < Map.GetLength(1); j++)
+            for(int j = 0; j < map.GetLength(1); j++)
             {
                 if(i % 2 == 0 && j % 2 == 0)
                 {
-                    Map[i, j] = "🗼";
+                    map[i, j] = "🗼";
                 }
                 else if(i % 2 != 0 && j % 2 != 0)
                 {
-                    Map[i, j] = "🕳️";
+                    map[i, j] = "🕳️";
                 }
                 else
                 {
-                    Map[i, j] = "🌿";
+                    map[i, j] = "🌿";
                 }
             }
         }
 
-        for (int i = 0; i < Map.GetLength(0); i++)
+        for (int i = 0; i < map.GetLength(0); i++)
         {
-            for (int j = 0; j < Map.GetLength(1); j++)
+            for (int j = 0; j < map.GetLength(1); j++)
             {
-                Console.Write($"{Map[i, j]} ");
+                Console.Write($"{map[i, j]} ");
             }
             Console.WriteLine();
         }
@@ -62,6 +57,8 @@
         {
             for (int j = 0; j < Regions[i].Length; j++)
             {
+
+                //ternaria
                 if ((i + j) % 2 == 0)
                 {
                     Regions[i][j] = "➖";
