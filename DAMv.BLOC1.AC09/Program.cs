@@ -9,13 +9,11 @@ public class Program
 
         string[] AvailableObjects = { "Espasa", "Escut", "Poció", "Arc" };
         string[] rareTypes = { "Comú", "Rar", "Legendari", "Ordinari" };
-        string name;
-        int minLevel;
-        int power;
+        string name, rareType;
+        int minLevel, power;
         double weight;
         decimal price;
         bool isRareItem;
-        string rareType;
 
         Random rnd = new Random();
 
@@ -29,6 +27,7 @@ public class Program
             weight = rnd.NextDouble() * 100;
             price = (decimal)rnd.NextDouble() * 5000;
             isRareItem = rnd.Next(0, 2) == 1 ? true : false;
+
             if (isRareItem)
             {
                 rareType = rareTypes[rnd.Next(rareTypes.Length)];
